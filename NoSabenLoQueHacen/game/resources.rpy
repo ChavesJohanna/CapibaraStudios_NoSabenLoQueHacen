@@ -3,6 +3,9 @@ define mel = Character("Melani")
 define lau = Character("Laura")
 define ros = Character("Rocio")
 
+define paSanti = Character("Papá de Santiago")
+define maVale = Character("Mamá de Valentina")
+
 define fran = Character("Francisco")
 define pab = Character("Pablo")
 define santi = Character("Santiago")
