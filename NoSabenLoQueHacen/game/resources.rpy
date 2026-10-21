@@ -12,6 +12,10 @@ define santi = Character("Santiago")
 define sof = Character("Sofia")
 define vale = Character("Valentina")
 
+define resExcelente = Character("¡Excelente Trabajo!")
+define resBuen = Character("¡Buen Trabajo!")
+define resAMej = Character("¡A mejorar!")
+
 ##### SPRITES #####
 #image melani_normal = "images/melani_normal.png"
 #image laura_normal = "images/laura_normal.png"

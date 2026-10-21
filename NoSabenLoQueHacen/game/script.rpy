@@ -278,21 +278,176 @@ label caminoLineal1:
     menu:
         "Dejarlo pasar":
             "se eligio op 1"
-            jump caminoLineal2
+            jump op1
 
         "Consolar a Santiago":
             "se eligio op 2"
             $puntaje +=1
-            jump caminoLineal2
+            jump op2
+
         "Hablar con ambos":
             "se elijio op 3"
             $puntaje +=2
-            jump caminoLineal2
+            jump op3
 
     #return
 
-label caminoLineal2:
-    "camino lineal 2"
+label op1:
+    "camino de la opcion 1"
     "cantidad de puntaje [puntaje]"
 
+    mel "Santiago tranquilo ya pasó..."
+    mel "Valentina ordena los juguetes por favor."
+
+    vale "Pero.."
+
+    mel "En un ratito vamos a tomar el té."
+    mel "Ordenemos la salita..."
+
+    vale "..."
+
+    santi "..."
+
+    mel "{i}No se que paso pero los chicos se ven descontentos{/i}"
+    mel "{i}Tengo que estar más atenta.{/i}"
+
+    jump resultadoMejorar
+
+
+
+label op2:
+    "camino de la opcion 2"
+    "cantidad de puntaje [puntaje]"
+
+    mel "Chicos que paso?"
+    mel "{i}Santiago esta en el suelo llorando.{/i}"
+    mel "{i}Me pregunto que pasó...{/i}"
+    mel "{i}Tengo que tranquilizarlo.{/i}"
+
+    santi "Snif..."
+
+    mel "Santiago..."
+    mel "Tranquilo..."
+    mel "Ya pasó... ya pasó"
+    mel "Tranquilo si?"
+
+    santi "..."
+    santi "..."
+
+    mel "{i}Hay un peluche sobre los bloques...{/i}"
+    mel "Valentina ten más cuidado."
+
+    vale "..."
+    vale "Yo no hice nada."
+
+    mel "Mmm..."
+    mel "{i}...{/i}"
+    mel "{i}No tendria que haberme ido.{/i}"
+    mel "{i}Seré más cuidadosa la proxima vez.{/i}"
+
+    jump resultadoBuen
+
+
+
+label op3:
+    "camino de la opcion 3"
+    "cantidad de puntaje [puntaje]"
+
+    mel "¿Que pasó chicos?"
+    mel "Me cuentan por favor..."
+
+    santi "Snif... ella fue..."
+
+    vale "Yo no hice nada."
+
+    mel "Valentina cuentame que paso antes de que llorara tu compañerito."
+
+    vale "Estabba jugando yy lo tiré..."
+
+    mel "{i}Parece que tiró la torre con un peluche{/i}"
+    mel "Esta bien... sabes por que esta llorando?"
+
+    vale "No..."
+
+    mel "Él estaba jugando con su torre que le tomo tiempo construir..."
+    mel "y cuando tiraste el peluche, la torre se cayó..."
+    mel "eso lo puso triste... la torre era importante para él..."
+    mel "entiendes?"
+
+    vale "..."
+    vale "si..."
+
+    mel "Bueno... que te parece si le pedimos perdón."
+    mel "Decile “Perdón, fue un accidente.”"
+
+    vale "..."
+    vale "Perdón..."
+
+    mel "Bien hecho vale..."
+    mel "Santiago... esta bien que te sientas triste."
+    mel "Tu compañera no queria lastimarte, fue un accidente..."
+    mel "¿Quieres un abraso?"
+
+    santi "..."
+    santi "si..."
+#se abrazan
+    mel "..."
+    mel "Valentina ¿que tal si le ayudamos a contruir otra torre?"
+    mel "¿Que dices?"
+    
+    vale "Sii."
+
+    mel "Santiago contruyamos una más alta los tres."
+    mel "¿Que te parece?"
+
+    santi "..."
+    santi "Esta bien...!"
+
+    mel "{i}Fiuu eso salió bien{/i}"
+    mel "{i}Ahora juguemos un ratito con ellos{/i}"
+
+    jump resultadoExcelente
+
+
+label resultadoExcelente:
+
+    resExcelente "Tus decisiones favorecieron un ambiente seguro y permitieron que los niños expresaran lo que sentían."
+    resExcelente "Además de resolver las situaciones del momento..."
+    resExcelente "ayudaste a que comenzaran a desarrollar herramientas para relacionarse con los demás."
+
+    resExcelente "{b}Para recordar:{/b} acompañar a los niños en los conflictos también es una oportunidad para enseñarles a resolverlos."
+
+    jump final
+
+
+label resultadoBuen:
+
+    resBuen "Lograste responder adecuadamente a la mayoría de las situaciones y mantener un ambiente de cuidado."
+    resBuen "En algunas situaciones, sin embargo..."
+    resBuen "podrías darles a los niños más espacio para expresar lo que sienten y participar en la resolución del conflicto."
+
+    resBuen "{b}Para recordar:{/b} no solo importa resolver el conflicto, sino también acompañar a los niños para que puedan comprenderlo y buscar soluciones."
+
+    jump final
+
+
+label resultadoMejorar:
+
+    resAMej "Algunas de tus decisiones permitieron resolver las situaciones rápidamente."
+    resAMej "pero no siempre tuvieron en cuenta lo que los niños estaban sintiendo..."
+    resAMej "o la posibilidad de que participaran en la resolución del conflicto."
+
+    resAMej "{b}Una próxima vez:{/b} antes de intervenir, intentá observar qué está ocurriendo..."
+    resAMej "escuchar a los niños y ayudarlos a encontrar una solución adecuada."
+
+    resAMej "{b}Para recordar:{/b} acompañar no significa resolver todo por ellos."
+
+    jump final
+
+
+
+label final:
+    "haz llegado al final..."
+    "¡Gracias por jugar!"
+    "La historia continuara..."
     return
