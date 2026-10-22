@@ -13,7 +13,7 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
-define config.name = _("NoSabenLoQueHacen")
+define config.name = _("No Saben Lo Que Hacen")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
@@ -30,7 +30,7 @@ define config.version = "1.0"
 ## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
 ## comillas triples y deja una línea en blanco entre párrafos.
 
-define gui.about = _p("""
+define gui.about = _p("""Capibara Studios 2026
 """)
 
 

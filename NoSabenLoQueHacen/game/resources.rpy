@@ -32,7 +32,7 @@ define resAMej = Character("¡A mejorar!")
 
 
 
-##### PUNTAJES #####
+##### PUNTAJE #####
 init:
     $ puntaje = 0
 
@@ -45,3 +45,55 @@ transform posIzq:
 transform posDer:
     xpos 1280
     ypos 100
+
+
+##### INTERFACES DEL JUEGO #####
+
+### MENU PRINCIPAL ###
+screen menu_principal():
+
+    tag menu
+
+    add "images/fondo_menu.jpg"
+
+    add "gui/window_icon.png": #se usa de prueba para donde estara el titulo del juego
+        xpos 200
+        ypos 120
+
+    # Contenedor de los botones.
+    vbox:
+        #xalign 0.05
+        #yalign 0.5
+        #spacing 15
+
+        style_prefix "menu_principal"
+
+        textbutton _("Comenzar") action Start():
+            xpos 120
+            ypos 600
+
+        textbutton _("Opciones") action ShowMenu("preferences"):
+            xpos 400
+            ypos 700
+
+        textbutton _("Salir") action Quit(confirm=True):
+            xpos 120
+            ypos 800
+
+
+### MENU A LADO DE LOS DIALOGOS ###
+screen menu_rapido():
+
+    vbox:
+        xalign 0.0
+        yalign 1.0
+        xoffset 80 
+        yoffset -50
+        spacing 20 #espacio entre los botones
+
+        textbutton _("Pausa") action ShowMenu('preferences')
+        textbutton _("Auto") action Preference("auto-forward", "toggle")
+        textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
+
+init python:
+    config.overlay_screens.append("menu_rapido")

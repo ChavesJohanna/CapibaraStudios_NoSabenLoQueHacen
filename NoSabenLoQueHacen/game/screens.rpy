@@ -235,7 +235,7 @@ style choice_button_text is default:
 ## El menú rápido se presenta en el juego para ofrecer fácil acceso a los menus
 ## externos al juego.
 
-screen quick_menu():
+""" screen quick_menu():
 
     ## Asegura que esto aparezca en la parte superior de otras pantallas.
     zorder 100
@@ -276,6 +276,8 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+
+"""
 
 
 ################################################################################
@@ -354,7 +356,8 @@ screen main_menu():
 
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
-
+    use menu_principal #aqui usamos el main menu de personalizado
+"""
     add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.
@@ -404,7 +407,7 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
-
+"""
 
 ## Pantalla del menú del juego #################################################
 ##
