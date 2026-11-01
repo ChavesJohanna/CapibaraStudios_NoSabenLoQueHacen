@@ -128,14 +128,14 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
-
+#pantalla del dialogo
 style window:
     xalign 0.5
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("images/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -209,7 +209,21 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption:
+                action i.action
+                background "images/boton_eleccion.png" ##fondo de las opciones
+                hover_background "images/boton_eleccion.png"
+
+                at transform:
+                    xalign 0.5
+                    yalign 0.5
+                    subpixel True
+
+                    on hover:
+                        ease 0.2 zoom 1.1
+
+                    on idle:
+                        ease 0.2 zoom 1.0
 
 
 style choice_vbox is vbox

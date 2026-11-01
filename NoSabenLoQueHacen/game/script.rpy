@@ -13,13 +13,13 @@ label start:
     # defecto. Es posible añadir un archivo en el directorio 'images' con el
     # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
 
-    scene bg room
+    #scene bg room
 
     # Muestra un personaje: Se usa un marcador de posición. Es posible
     # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
     # 'images'.
 
-    show eileen happy at posDer
+    #show eileen happy at posDer
 
 
     #show eileen at posIzq
@@ -33,9 +33,9 @@ label start:
 
     #####  DE AQUI EMPIEZAN LOS DIALOGOS DEL JUEGO #####
 
-    #scene puerta 
+    scene recepcion 
 
-    #show melani_normal
+    show melani_normal at posIzq
 
     mel "Bien… ya estoy aquí."
     mel "¡Qué emoción! espero poder usar todo lo que aprendí."
@@ -43,7 +43,7 @@ label start:
     mel "{i} Mmm... {/i}"
     mel "{i} De última le pregunto su nombre. {/i}"
 
-    #scene recepcion
+    show laura_normal at posDer
 
     lau "Hola Melani! Buen día."
     lau "Que bueno que llegaste."

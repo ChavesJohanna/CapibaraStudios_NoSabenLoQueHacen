@@ -17,18 +17,18 @@ define resBuen = Character("¡Buen Trabajo!")
 define resAMej = Character("¡A mejorar!")
 
 ##### SPRITES #####
-#image melani_normal = "images/melani_normal.png"
-#image laura_normal = "images/laura_normal.png"
+image melani_normal = "images/melani_normal.png"
+image laura_normal = "images/laura_normal.png"
 
 
 ##### FONDOS #####
 #image menu = "images/menu.png"
 #image puerta = "images/puerta_entrada.png"
-#image recepcion = "images/recepcion.png"
+image recepcion = "images/recepcion.png"
 #image cocina = "images/cocina.png"
 #image patio = "images/patio.png"
 #image sala5 = "images/sala_5.png"
-#image sala4 = "images/sala_4.png"
+image sala4 = "images/sala_de_melani.png"
 
 
 
@@ -40,11 +40,11 @@ init:
 ##### POSICION EN PANTALLA #####
 transform posIzq:
     xpos 300
-    ypos 100
+    ypos 200
 
 transform posDer:
     xpos 1280
-    ypos 100
+    ypos 200
 
 
 ##### INTERFACES DEL JUEGO #####
@@ -54,46 +54,132 @@ screen menu_principal():
 
     tag menu
 
-    add "images/fondo_menu.jpg"
+    add "images/menu_principal.png"
 
-    add "gui/window_icon.png": #se usa de prueba para donde estara el titulo del juego
+    add "images/game_menu_height250.png": #se usa de prueba para donde estara el titulo del juego
         xpos 200
         ypos 120
 
     # Contenedor de los botones.
-    vbox:
+    #vbox:
         #xalign 0.05
         #yalign 0.5
         #spacing 15
 
-        style_prefix "menu_principal"
+    style_prefix "menu_principal"
 
-        textbutton _("Comenzar") action Start():
-            xpos 120
-            ypos 600
+    imagebutton:
+        idle "images/boton_menu_jugar.png"
+        hover "images/boton_menu_jugar.png"
+        xpos 250
+        ypos 600
+        action Start()
 
-        textbutton _("Opciones") action ShowMenu("preferences"):
-            xpos 400
-            ypos 700
+        at transform:
+            xanchor 0.5
+            yanchor 0.5
+            subpixel True
 
-        textbutton _("Salir") action Quit(confirm=True):
-            xpos 120
-            ypos 800
+            on hover:
+                ease 0.2 zoom 1.1
+
+            on idle:
+                ease 0.2 zoom 1.0            
+
+
+    imagebutton:
+        idle "images/boton_menu_opciones.png"
+        xpos 650
+        ypos 750
+        action ShowMenu("preferences")
+        
+        at transform:
+            xanchor 0.5
+            yanchor 0.5
+            subpixel True
+
+            on hover:
+                ease 0.2 zoom 1.1
+
+            on idle:
+                ease 0.2 zoom 1.0    
+
+    imagebutton:
+        idle "images/boton_menu_salir.png"
+        xpos 250
+        ypos 900
+        action Quit(confirm=True)
+
+        at transform:
+            xanchor 0.5
+            yanchor 0.5
+            subpixel True
+
+            on hover:
+                ease 0.2 zoom 1.1
+
+            on idle:
+                ease 0.2 zoom 1.0    
 
 
 ### MENU A LADO DE LOS DIALOGOS ###
 screen menu_rapido():
 
     vbox:
-        xalign 0.0
-        yalign 1.0
+        #xalign 0.0
+        xpos 80
+        ypos 900
+        #yalign 1.0
         xoffset 80 
         yoffset -50
         spacing 20 #espacio entre los botones
 
-        textbutton _("Pausa") action ShowMenu('preferences')
-        textbutton _("Auto") action Preference("auto-forward", "toggle")
-        textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
+        imagebutton:
+            idle "images/boton_pausa.png"
+            action ShowMenu('preferences')
+
+            at transform:
+                xanchor 0.5
+                yanchor 0.5
+                subpixel True
+
+                on hover:
+                    ease 0.2 zoom 1.1
+
+                on idle:
+                    ease 0.2 zoom 1.0    
+
+        imagebutton:
+            idle "images/boton_auto.png"
+            action Preference("auto-forward", "toggle")
+
+            at transform:
+                xanchor 0.5
+                yanchor 0.5
+                subpixel True
+
+                on hover:
+                    ease 0.2 zoom 1.1
+
+                on idle:
+                    ease 0.2 zoom 1.0                
+        
+        imagebutton: 
+            idle "images/boton_saltar.png"
+            action Skip() alternate Skip(fast=True, confirm=True)
+
+            at transform:
+                xanchor 0.5
+                yanchor 0.5
+                subpixel True
+
+                on hover:
+                    ease 0.2 zoom 1.1
+
+                on idle:
+                    ease 0.2 zoom 1.0              
+            
+
 
 init python:
     config.overlay_screens.append("menu_rapido")
