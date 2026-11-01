@@ -1,4 +1,6 @@
 ##### CREACION DE PERSONAJES #####
+define tuto = Character("Tutorial")
+
 define mel = Character("Melani")
 define lau = Character("Laura")
 define ros = Character("Rocio")
@@ -18,16 +20,37 @@ define resAMej = Character("¡A mejorar!")
 
 ##### SPRITES #####
 image melani_normal = "images/melani_normal.png"
+image melani_feliz = "images/melani_feliz.png"
+image melani_pensando = "images/melani_pensando.png"
+image melani_hablando = "images/melani_hablando.png"
+image melani_asustada = "images/melani_asustada.png"
+image melani_cansada = "images/melani_cansada.png"
+
 image laura_normal = "images/laura_normal.png"
+image laura_amable = "images/laura_amable.png"
+image laura_hablando = "images/laura_hablando.png"
+image laura_mostrando = "images/laura_mostrando.png"
+
+image paSanti_normal = "images/paSanti_normal.png"
+image paSanti_hablando = "images/paSanti_hablando.png"
+
+image maVale_normal = "images/maVale_normal.png"
+image maVale_hablando = "images/maVale_hablando.png"
+
+image santi_normal = "images/santi_normal.png"
+image santi_hablando = "images/santi_hablando.png"
+image santi_llorando = "images/santi_llorando.png"
+
+image vale_normal = "images/vale_normal.png"
+image vale_hablando = "images/vale_hablando.png"
+image vale_preocupada = "images/vale_preocupada.png"
+image vale_preocupada_hablando = "images/vale_preocupada_hablando.png"
 
 
 ##### FONDOS #####
-#image menu = "images/menu.png"
-#image puerta = "images/puerta_entrada.png"
 image recepcion = "images/recepcion.png"
 #image cocina = "images/cocina.png"
-#image patio = "images/patio.png"
-#image sala5 = "images/sala_5.png"
+image patio = "images/patio.png"
 image sala4 = "images/sala_de_melani.png"
 
 
@@ -45,6 +68,18 @@ transform posIzq:
 transform posDer:
     xpos 1280
     ypos 200
+
+transform posCen:
+    xpos 900
+    ypos 200
+
+transform posNinio1:
+    xpos 1100
+    ypos 500
+
+transform posNinio2:
+    xpos 1500
+    ypos 500
 
 
 ##### INTERFACES DEL JUEGO #####

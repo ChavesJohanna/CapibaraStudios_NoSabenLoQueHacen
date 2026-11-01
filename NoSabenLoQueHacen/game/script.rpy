@@ -1,35 +1,13 @@
-﻿# Coloca el código de tu juego en este archivo.
-
-# Declara los personajes usados en el juego como en el ejemplo:
-
-define e = Character("Eileen")
-
-
-# El juego comienza aquí.
-
+﻿
 label start:
 
-    # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
-    # defecto. Es posible añadir un archivo en el directorio 'images' con el
-    # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
+    #scene tutorial
 
-    #scene bg room
+    tuto "El texto como este es algo que dice el personaje"
 
-    # Muestra un personaje: Se usa un marcador de posición. Es posible
-    # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
-    # 'images'.
+    tuto "{i}El texto en este estilo son pensamientos del personaje{/i}"
 
-    #show eileen happy at posDer
-
-
-    #show eileen at posIzq
-
-    # Presenta las líneas del diálogo.
-
-    #e "Has creado un nuevo juego Ren'Py."
-
-    #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
-
+    tuto "Disfruta de la historia!!"
 
     #####  DE AQUI EMPIEZAN LOS DIALOGOS DEL JUEGO #####
 
@@ -41,6 +19,7 @@ label start:
     mel "¡Qué emoción! espero poder usar todo lo que aprendí."
     mel "{i} ¿Cómo se llamaba la directora? {/i}"
     mel "{i} Mmm... {/i}"
+
     mel "{i} De última le pregunto su nombre. {/i}"
 
     show laura_normal at posDer
@@ -57,6 +36,9 @@ label start:
     lau "¿Quieres un tour por las aulas?..."
     lau "o prefieres que vayamos a tu sala?"
 
+    hide melani_normal
+    show melani_pensando at posIzq
+
     mel "Mmm..."
 
     menu:
@@ -70,25 +52,36 @@ label start:
     #return
 
 label recorrido:
+
+    hide melani_pensando
+    show melani_normal at posIzq
+
     mel "Mejor recorremos un poco."
     mel "Así me guío mejor."
 
+    hide laura_normal
+    show laura_mostrando at posDer
+
     lau "Bueno pasemos entonces."
-    lau "Primero tenemos la cocina"
+    #lau "Primero tenemos la cocina"
 
     #scene cocina
 
-    lau "Rocío es la encargada de la cocina."
-    lau "Después de izar la bandera pasará por tu sala para servir el té a los chicos."
-    lau "Ten preparados sus manteles y sus tacitas."
+    #lau "Rocío es la encargada de la cocina."
+    #lau "Después de izar la bandera pasará por tu sala para servir el té a los chicos."
+    #lau "Ten preparados sus manteles y sus tacitas."
 
-    mel "Esta bien."
-    mel "¿Le dan almuerzo también?"
+    #mel "Esta bien."
+    #mel "¿Le dan almuerzo también?"
 
-    lau "¡Claro! Rocio también se encarga de eso."
-    lau "Así que no tienes de qué preocuparte."
+    #lau "¡Claro! Rocio también se encarga de eso."
+    #lau "Así que no tienes de qué preocuparte."
 
-    #scene patio
+    scene patio
+
+    show melani_normal at posIzq
+
+    show laura_mostrando at posDer
 
     lau "Luego tenemos el patio."
     lau "Tenemos algunos juegos."
@@ -98,24 +91,30 @@ label recorrido:
     
     #scene sala5
     
-    mel "¿Esta es mi sala?"
-    mel "Es bastante amplia."
-    mel "¡Incluso hay muchos juguetes!"
-    mel "¡Es muy bonita!"
+    #mel "¿Esta es mi sala?"
+    #mel "Es bastante amplia."
+    #mel "¡Incluso hay muchos juguetes!"
+    #mel "¡Es muy bonita!"
 
-    lau "Verdad que tiene bastante."
-    lau "Pero no es tu sala."
-    lau "Aquí es donde trabaja Elena."
-    lau "La seño de la sala de 5 años."
+    #lau "Verdad que tiene bastante."
+    #lau "Pero no es tu sala."
+    #lau "Aquí es donde trabaja Elena."
+    #lau "La seño de la sala de 5 años."
 
-    mel "Bueno… ¡Me servirá de guía para decorar la mía!"
+    #mel "Bueno… ¡Me servirá de guía para decorar la mía!"
 
-    lau "me agrada tu motivación."
+    #lau "me agrada tu motivación."
     
     jump caminoLineal1
 
 
 label irSala:
+
+    hide melani_pensando
+    show melani_normal at posIzq
+
+    #show laura_normal at posDer
+
     mel "¡Vamos directo!"
     mel "Estoy muy emocionada por conocer mi sala."
 
@@ -123,38 +122,53 @@ label irSala:
 
     #scene cocina
 
-    mel "{i}Esta parece ser la cocina… {/i}"
-    mel "{i}¿Será que dan desayuno y almuerzo? {/i}"
-    mel "{i}Ohh, un cartel…  “Desayuno xhs” {/i}"
-    mel "{i}Parece que si hay desayuno. {/i}"
+    #mel "{i}Esta parece ser la cocina… {/i}"
+    #mel "{i}¿Será que dan desayuno y almuerzo? {/i}"
+    #mel "{i}Ohh, un cartel…  “Desayuno xhs” {/i}"
+    #mel "{i}Parece que si hay desayuno. {/i}"
 
-    #scene patio
+    scene patio
+
+    show melani_normal at posIzq
+
+    show laura_normal at posDer
 
     mel "{i}Ooh el patio tiene varios juego… {/i}"
     mel "{i}Ya me imagino a los chicos divirtiéndose. {/i}"
 
     #scene sala5
 
-    mel "AAA esta muy bonita!"
-    mel "Es más amplia de lo que me imagine."
+    #mel "AAA esta muy bonita!"
+    #mel "Es más amplia de lo que me imagine."
 
-    lau "Todavía falta para que lleguemos Melani."
+    #lau "Todavía falta para que lleguemos Melani."
 
-    mel "Que?"
-    mel "{i}Entonces no es esta…? {/i}"
-    mel "{i}Bueno no perdamos la esperanza. {/i}"
+    #mel "Que?"
+    #mel "{i}Entonces no es esta…? {/i}"
+    #mel "{i}Bueno no perdamos la esperanza. {/i}"
 
 
     jump caminoLineal1
 
 
 label caminoLineal1:
-    #scene sala4
+    
+    scene sala4
+
+    show melani_normal at posIzq
+
+    show laura_normal at posDer
 
     lau "Ahora si… Taran!"
     lau "Esta es tu sala."
 
-    mel "Está… {w=0.5}algo vacía…"
+    #mel "Está… {w=0.5}algo vacía…"
+
+    hide melani_normal
+    show melani_feliz at posIzq
+
+    mel "AAA esta muy bonita!"
+    mel "Es más amplia de lo que me imagine."
 
     lau "La inauguramos hace poco."
     lau "Para que los chicos estén más cómodos."
@@ -162,6 +176,9 @@ label caminoLineal1:
     lau "Y como una de las auxiliares está de licencia."
     lau "Andamos con poco personal."
     lau "Hasta que llegó nuestra salvadora."
+
+    hide melani_feliz
+    show melani_normal at posIzq
 
     mel "¿Quién yo?"
 
@@ -176,8 +193,12 @@ label caminoLineal1:
 
     lau "Bueno ya vuelvo."
 
+    hide laura_normal
+
     mel "Bien… hoy trabajaremos los alimentos saludables."
     mel "{i}Para aprovechar iré pegando las caritas y colocando la división de saludable y No saludable en el pizarrón. {/i}"
+
+    show laura_normal at posDer
 
     lau "Holis! ya volví y te traje la planilla."
     lau "También quería avisarte que ya llegaron algunos de los chicos."
@@ -188,19 +209,27 @@ label caminoLineal1:
     lau "Bueno, cualquier cosa estoy en la dirección por si necesitas algo."
     lau "Ten un buen dia Melani."
 
+    hide laura_normal
+
     mel "Bien, gracias Laura."
     mel "{i}Okey entonces a quienes vamos a tener hoy? {/i}"
     mel "{i}Francisco, Pablo, Sofía, Santiago y Valentina… {/i}"
     mel "{i}Bueno vamos a conocerlos entonces. {/i}"
 
-    #scene recepcion
+    scene recepcion
+
+    show melani_normal at posIzq
 
     mel "{i}Ooh, son dos. {/i}"
     mel "Buenas, me llamo Melani"
     mel "Soy la maestra de salita de 4"
 
+    show paSanti_normal at posDer
+
     paSanti "Buen dia, soy el papá de Santiago."
     paSanti "Saluda a la nueva seño…"
+
+    show santi_normal at posNinio2
 
     santi "..."
 
@@ -215,14 +244,18 @@ label caminoLineal1:
 
     santi "Si..."
 
+    show maVale_normal at posCen
+
     maVale "Buen día, ¿usted es la maestra de 4 verdad?"
 
     mel "Sí, mi nombre es Melani."
 
+    show vale_normal at posNinio1
+
     vale "Holaaa."
 
-    maVale "Bueno te la dejo, me tengo que ir."
-    maVale "Chau hija, nos vemos más tarde."
+    maVale "Bueno te la encargo, me tengo que ir."
+    maVale "Cuidate hija, nos vemos más tarde."
 
     mel "Si esta bien, que tenga buen dia!"
 
@@ -236,12 +269,20 @@ label caminoLineal1:
     vale "Siii"
     santi "Si"
 
-    #scene sala4
+    scene sala4
+
+    show melani_normal at posIzq
+
+    show vale_normal at posNinio1
+    show santi_normal at posNinio2
 
     mel "Chicos en la esquina hay algunos juguetes para que se diviertan."
 
     santi "Bueno..."
     vale "Siii"
+
+    hide vale_normal 
+    hide santi_normal 
 
     mel "{i}Son tan lindos. {/i}"
     mel "{i}Okey vamos anotando en la asistencia. {/i}"
@@ -256,22 +297,33 @@ label caminoLineal1:
     santi "..."
     vale "Buenoo"
 
-    #scene recepcion
+    scene recepcion
+
+    show melani_normal at posIzq
 
     mel "¡Buen día!"
     "..."
     "..."
     "..."
-    mel "Vamos a la salita chicos."
+    #mel "Vamos a la salita chicos." aqui iria una animacion de fade al pasar de nuevo ala sala
 
-    #scene sala4
+    scene sala4
+
+    show melani_normal at posIzq
 
     mel "Ya volvii!"
     mel "Aaa, Que pasó!?"
 
+    show santi_llorando at posNinio2
+
     santi "Snif..."
 
+    show vale_preocupada at posNinio1
+
     vale "Seño se puso a llorar."
+
+    hide melani_normal
+    show melani_pensando at posIzq
 
     mel "{i}Ahora que hago!? {/i}"
 
@@ -293,6 +345,10 @@ label caminoLineal1:
     #return
 
 label op1:
+
+    hide melani_pensando
+    show melani_normal at posIzq
+
     "camino de la opcion 1"
     "cantidad de puntaje [puntaje]"
 
@@ -308,6 +364,9 @@ label op1:
 
     santi "..."
 
+    hide melani_normal
+    show melani_cansada at posIzq
+
     mel "{i}No se que paso pero los chicos se ven descontentos{/i}"
     mel "{i}Tengo que estar más atenta.{/i}"
 
@@ -316,6 +375,10 @@ label op1:
 
 
 label op2:
+    
+    hide melani_pensando
+    show melani_normal at posIzq
+
     "camino de la opcion 2"
     "cantidad de puntaje [puntaje]"
 
@@ -340,6 +403,9 @@ label op2:
     vale "..."
     vale "Yo no hice nada."
 
+    hide melani_normal
+    show melani_cansada at posIzq
+
     mel "Mmm..."
     mel "{i}...{/i}"
     mel "{i}No tendria que haberme ido.{/i}"
@@ -350,6 +416,10 @@ label op2:
 
 
 label op3:
+    
+    hide melani_pensando
+    show melani_normal at posIzq
+
     "camino de la opcion 3"
     "cantidad de puntaje [puntaje]"
 
@@ -380,8 +450,15 @@ label op3:
     mel "Bueno... que te parece si le pedimos perdón."
     mel "Decile “Perdón, fue un accidente.”"
 
+    hide vale_preocupada
+    show vale_preocupada_hablando at posNinio1:
+        xzoom -1
+
     vale "..."
     vale "Perdón..."
+
+    hide vale_preocupada_hablando
+    show vale_preocupada at posNinio1
 
     mel "Bien hecho vale..."
     mel "Santiago... esta bien que te sientas triste."
@@ -391,10 +468,16 @@ label op3:
     santi "..."
     santi "si..."
 #se abrazan
+    hide santi_llorando
+    show santi_normal at posNinio2
+
     mel "..."
     mel "Valentina ¿que tal si le ayudamos a contruir otra torre?"
     mel "¿Que dices?"
-    
+
+    hide vale_preocupada
+    show vale_normal at posNinio1
+
     vale "Sii."
 
     mel "Santiago contruyamos una más alta los tres."
@@ -402,6 +485,9 @@ label op3:
 
     santi "..."
     santi "Esta bien...!"
+
+    hide melani_normal
+    show melani_feliz at posIzq
 
     mel "{i}Fiuu eso salió bien{/i}"
     mel "{i}Ahora juguemos un ratito con ellos{/i}"
