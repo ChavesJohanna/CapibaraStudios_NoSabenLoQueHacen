@@ -91,9 +91,9 @@ screen menu_principal():
 
     add "images/menu_principal.png"
 
-    add "images/game_menu_height250.png": #se usa de prueba para donde estara el titulo del juego
-        xpos 200
-        ypos 120
+    add "images/game_menu_logo.png": #se usa de prueba para donde estara el titulo del juego
+        xpos 150
+        ypos 35
 
     # Contenedor de los botones.
     #vbox:
