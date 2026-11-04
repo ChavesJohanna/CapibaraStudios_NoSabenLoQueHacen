@@ -128,14 +128,14 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
-
+#pantalla del dialogo
 style window:
     xalign 0.5
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("images/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -143,7 +143,7 @@ style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
-
+#aqui iria el fondito rosa de los nombres
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
@@ -209,7 +209,21 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption:
+                action i.action
+                background "images/boton_eleccion.png" ##fondo de las opciones
+                hover_background "images/boton_eleccion.png"
+
+                at transform:
+                    xalign 0.5
+                    yalign 0.5
+                    subpixel True
+
+                    on hover:
+                        ease 0.2 zoom 1.1
+
+                    on idle:
+                        ease 0.2 zoom 1.0
 
 
 style choice_vbox is vbox
@@ -235,7 +249,7 @@ style choice_button_text is default:
 ## El menú rápido se presenta en el juego para ofrecer fácil acceso a los menus
 ## externos al juego.
 
-screen quick_menu():
+""" screen quick_menu():
 
     ## Asegura que esto aparezca en la parte superior de otras pantallas.
     zorder 100
@@ -276,6 +290,8 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+
+"""
 
 
 ################################################################################
@@ -354,7 +370,8 @@ screen main_menu():
 
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
-
+    use menu_principal #aqui usamos el main menu de personalizado
+"""
     add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.
@@ -404,7 +421,7 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
-
+"""
 
 ## Pantalla del menú del juego #################################################
 ##
