@@ -20,7 +20,7 @@ label start:
     mel "{i} ¿Cómo se llamaba la directora? {/i}"
     mel "{i} Mmm... {/i}"
 
-    mel "{i} De última le pregunto su nombre. {/i}"
+    mel "{i} Creo que ya me acorde. {/i}"
 
     show laura_normal at posDer
 
@@ -83,7 +83,7 @@ label recorrido:
 
     show laura_mostrando at posDer
 
-    lau "Luego tenemos el patio."
+    lau "Por aqui tenemos el patio."
     lau "Tenemos algunos juegos."
     lau "A media mañana suena el timbre para el recreo de los chicos."
     lau "Ten en cuenta de que algunos son muy de jugar a lo bruto."
@@ -303,11 +303,11 @@ label caminoLineal1:
 
     mel "¡Buen día!"
     "..."
-    "..."
-    "..."
+    #"..."
+    #"..."
     #mel "Vamos a la salita chicos." aqui iria una animacion de fade al pasar de nuevo ala sala
 
-    scene sala4
+    scene sala4 #with fade
 
     show melani_normal at posIzq
 
@@ -329,16 +329,16 @@ label caminoLineal1:
 
     menu:
         "Dejarlo pasar":
-            "se eligio op 1"
+            #"se eligio op 1"
             jump op1
 
         "Consolar a Santiago":
-            "se eligio op 2"
+            #"se eligio op 2"
             $puntaje +=1
             jump op2
 
         "Hablar con ambos":
-            "se elijio op 3"
+            #"se elijio op 3"
             $puntaje +=2
             jump op3
 
@@ -349,8 +349,8 @@ label op1:
     hide melani_pensando
     show melani_normal at posIzq
 
-    "camino de la opcion 1"
-    "cantidad de puntaje [puntaje]"
+    #"camino de la opcion 1"
+    #"cantidad de puntaje [puntaje]"
 
     mel "Santiago tranquilo ya pasó..."
     mel "Valentina ordena los juguetes por favor."
@@ -379,11 +379,11 @@ label op2:
     hide melani_pensando
     show melani_normal at posIzq
 
-    "camino de la opcion 2"
-    "cantidad de puntaje [puntaje]"
+    #"camino de la opcion 2"
+    #"cantidad de puntaje [puntaje]"
 
     mel "Chicos que paso?"
-    mel "{i}Santiago esta en el suelo llorando.{/i}"
+    mel "{i}Santiago esta llorando.{/i}"
     mel "{i}Me pregunto que pasó...{/i}"
     mel "{i}Tengo que tranquilizarlo.{/i}"
 
@@ -420,8 +420,8 @@ label op3:
     hide melani_pensando
     show melani_normal at posIzq
 
-    "camino de la opcion 3"
-    "cantidad de puntaje [puntaje]"
+    #"camino de la opcion 3"
+    #"cantidad de puntaje [puntaje]"
 
     mel "¿Que pasó chicos?"
     mel "Me cuentan por favor..."
